@@ -12,11 +12,12 @@ provider:
   region: eu-west-1
   stage: dev
   environment:
-    DATABASE_HOST: "${env:DATABASE_HOST}"
-    DATABASE_PORT: "${env:DATABASE_PORT}"
-    DATABASE_USERNAME: "${env:DATABASE_USERNAME}"
-    DATABASE_PASSWORD: "${env:DATABASE_PASSWORD}"
-    DATABASE_NAME: "${env:DATABASE_NAME}"
+    DB_TYPE: "${env:DB_TYPE}"
+    DB_HOST: "${env:DB_HOST}"
+    DB_PORT: "{env:DB_PORT}"
+    DB_USERNAME: "{env:DB_USERNAME}"
+    DB_PASSWORD: "{env:DB_PASSWORD}"
+    DB_DATABASE: "{env:DB_DATABASE}"
 
 functions:
   main:
