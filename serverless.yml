@@ -1,7 +1,6 @@
 service: cart-api
 
 plugins:
-  - serverless-offline
   - serverless-dotenv-plugin
 
 useDotenv: true

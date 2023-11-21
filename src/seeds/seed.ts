@@ -2,9 +2,8 @@ import { createConnection, getRepository } from 'typeorm';
 import { Cart, CartStatus } from '../cart/entities/cart.entity';
 import { CartItem } from '../cart/entities/cart-item.entity';
 import { Product } from '../cart/entities/product.entity';
-import * as dotenv from 'dotenv';
 
-dotenv.config();
+import 'dotenv/config';
 
 async function seed() {
   const connection = await createConnection({
