@@ -1,0 +1,30 @@
+service: cart-api
+
+plugins:
+  - serverless-dotenv-plugin
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: eu-west-1
+  stage: dev
+  environment:
+    DB_TYPE: "${env:DB_TYPE}"
+    DB_HOST: "${env:DB_HOST}"
+    DB_PORT: "{env:DB_PORT}"
+    DB_USERNAME: "{env:DB_USERNAME}"
+    DB_PASSWORD: "{env:DB_PASSWORD}"
+    DB_DATABASE: "{env:DB_DATABASE}"
+
+functions:
+  main:
+    handler: dist/main.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
